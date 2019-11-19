@@ -8,27 +8,33 @@ description: All about server side rendering in react
 
 Most of all, we have started to working with `create-react-app` cli for react setup in client side.
 
-Client side application structure
+#### How client side application rendering
 
-step 1: First browser will request page which will have base html along with bundle.js script declaration
+![Client side rendering ](.gitbook/assets/clientsiderenderingstructure.png)
 
-step 2: Now browser requests bundle.js which has react code and app dependent files.
+**step 1:**  `Browser requests page`  which will have base html along with scripts registered.
 
-step 3: Now Our React App code will be initialised and loads data from backend.
+**step 2:**  `Browser requests .js files`  which has react code and app dependent files.
 
-step 4: After successful of above steps, Content will be visible to user.
+**step 3:**   `React app boots` our React App code will be initialised and loads data from backend.
 
-At initial load, client side react application needs some time to render our app.
+**step 4:**  `Content visible`  after successful of above steps, Content will be visible to user.
+
+At initial load, client side react application needs some time to render our app. User has to wait some time to see content. This is main concern in client side application.
 
 ### Server Side Rendering
 
-To avoid above situations and to show UI at initial load, Server side rendering are used.
+To avoid above situations and to show UI at initial load, we need server side rendering approach.
 
-Server side application structure
+#### How server side application rendering
 
-step 1 : Browser requests page which will have html tags of all pre-rendered components at server side along with script declaration
+![Server side rendering](.gitbook/assets/serversiderenderingstructure.png)
 
-step 2: Now content will be visible to us. because components are rendered at server side and sends those html. 
+**step 1 :** `Browser requests page`which will have html tags of all pre-rendered components at server side along with script declaration
+
+**step 2:** `Content visible` Now content will be visible to us. because components are rendered at server side and sends those html. 
+
+This is the advantage of server side rendering. User can see their contents at initial render.
 
 step 3: After rendering HTML in browser. It will request appended scripts.
 
