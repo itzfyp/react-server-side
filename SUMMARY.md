@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [React : Server Side Rendering](README.md)
 
