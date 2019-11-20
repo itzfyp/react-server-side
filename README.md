@@ -36,7 +36,11 @@ To avoid above situations and to show UI at initial load, we need server side re
 
 This is the advantage of server side rendering. User can see their contents at initial render.
 
-step 3: After rendering HTML in browser. It will request appended scripts.
+We have just seen the overview of how ssr quickly responds on your page load. 
 
-step 4 : After loading scripts, react will re-render app to register events.
+Now we will see what happens on SSR approach in detail
+
+![](.gitbook/assets/ssrfullstructure.png)
+
+Using React in server side is differing load time at initial load. Rest of things are happened in client side. 
 
