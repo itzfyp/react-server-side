@@ -1,9 +1,16 @@
-var http = require("http");
+const express = require('express');
+const React = require('react');
+const renderToString = require('react-dom/server').renderToString;
+const Home = require('./client/components/Home').default;
+const app = express();
+
+app.get('/', (req, res) => {
+  const content = renderToString(<Home />);
+
+  res.send(content);
+});
 
 //create a server object:
-http
-  .createServer(function(req, res) {
-    res.write("Hello World!"); //write a response to the client
-    res.end(); //end the response
-  })
-  .listen(8080); //the server object listens on port 8080
+app.listen(3000, () => {
+  console.log('listening on port 3000');
+}); //the server object listens on port 8080
