@@ -1,31 +1,21 @@
+import 'babel-polyfill';
 import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import Home from './client/components/Home';
+import renderer from './helpers/renderer';
+import createStore from './helpers/createStore';
 
 const app = express();
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  const content = renderToString(<Home />);
+app.get('*', (req, res) => {
 
-  const html = `
-    <html>
-      <head>
-        <body>
-          <div id="root">${content}</div>
-          <script src="bundle.js"></script>
-        </body>
-      </head>
-    </html>
-  `;
+  const store = createStore();
 
-  res.send(html);
+  res.send(renderer(req, store));
 });
 
 //create a server object:
 app.listen(3000, () => {
   console.log('listening on port 3000');
-}); //the server object listens on port 8080
+});
 
