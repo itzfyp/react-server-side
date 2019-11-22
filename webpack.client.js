@@ -2,19 +2,16 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    // inform webpack that we are building a bindle
-    // for nodeJS, rather than for the browser
-    target: 'node',
 
     // Tell webpack the root file of our
     // server application
-    entry: './src/index.js',
+    entry: './src/client/client.js',
 
     // Tell webpack where to put the output file
     // that is generated
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'public')
     },
 
     //Tell webpack to run bablel on every file it runs through

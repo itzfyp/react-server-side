@@ -4,7 +4,9 @@
   "description": "Sample Server side App",
   "main": "index.js",
   "scripts": {
-    "dev:build-server": "webpack --config webpack.server.js"
+    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:build-server": "webpack --config webpack.server.js --watch",
+    "dev:build-client": "webpack --config webpack.client.js --watch"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +14,7 @@
     "axios": "0.19.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
-    "babel-loader": "8.0.6",
+    "babel-loader": "7.1.4",
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-es2017": "6.24.1",
@@ -41,5 +43,8 @@
   },
   "keywords": [
     "ssr"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
+  }
 }
