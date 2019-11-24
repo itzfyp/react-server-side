@@ -7,4 +7,6 @@ const Home = () => (
     </Fragment>
 );
 
-export default Home;
+export default {
+    component: Home
+};
